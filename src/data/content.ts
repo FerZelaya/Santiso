@@ -4,7 +4,7 @@ export const WHATSAPP_DISPLAY = "9755-8568";
 export const images = {
   hero: "/images/hero-salsa-tomate.png",
   heroMermeladas: "/images/hero-mermeladas.png",
-  mermeladaSpoon: "/images/mermelada-naranja-maracuya.png",
+  mermeladaSpoon: "/images/mermelada-naranja-maracuya1.jpeg",
   mermeladasSizes: "/images/mermeladas-presentaciones.png",
   vegetales: "/images/conservas-vegetales.jpeg",
   antipasto: "/images/antipasto-bruschetta.png",
