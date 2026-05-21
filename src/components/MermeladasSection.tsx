@@ -1,9 +1,20 @@
-import { images, mermeladaFlavors, mermeladaPresentations, pricingNote } from '../data/content'
+import { useState } from 'react'
+import {
+  images,
+  mermeladaFlavors,
+  mermeladaPresentations,
+  pricingNote,
+  type MermeladaFlavor,
+} from '../data/content'
+import { cn } from '../lib/cn'
+import { FlavorModal } from './FlavorModal'
 import { Container } from './layout/Container'
 import { Section } from './layout/Section'
 import { SectionHeader } from './SectionHeader'
 
 export function MermeladasSection() {
+  const [selectedFlavor, setSelectedFlavor] = useState<MermeladaFlavor | null>(null)
+
   return (
     <Section id="mermeladas">
       <Container className="grid grid-cols-1 items-start gap-10 max-lg:gap-10 lg:grid-cols-2">
@@ -16,14 +27,24 @@ export function MermeladasSection() {
           />
           <div className="mt-5 flex flex-wrap gap-2" aria-label="Sabores disponibles">
             {mermeladaFlavors.map((flavor) => (
-              <span
-                key={flavor}
-                className="rounded-full border border-ink/[0.08] bg-white px-3 py-1.5 text-[0.88rem] font-medium"
+              <button
+                key={flavor.name}
+                type="button"
+                onClick={() => setSelectedFlavor(flavor)}
+                className={cn(
+                  'cursor-pointer rounded-full border border-ink/[0.08] bg-white px-3 py-1.5 text-[0.88rem] font-medium transition-colors',
+                  'hover:border-brand-green/30 hover:bg-brand-green/5',
+                  selectedFlavor?.name === flavor.name &&
+                    'border-brand-green bg-brand-green/10 text-brand-green',
+                )}
               >
-                {flavor}
-              </span>
+                {flavor.name}
+              </button>
             ))}
           </div>
+          <p className="mt-3 text-[0.85rem] text-ink-muted">
+            Toca un sabor para ver el producto.
+          </p>
           <div className="mt-6">
             <img
               src={images.mermeladaSpoon}
@@ -61,6 +82,8 @@ export function MermeladasSection() {
           ))}
         </div>
       </Container>
+
+      <FlavorModal flavor={selectedFlavor} onClose={() => setSelectedFlavor(null)} />
     </Section>
   )
 }

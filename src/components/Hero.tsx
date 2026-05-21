@@ -15,14 +15,14 @@ export function Hero() {
           <p className="mb-4 text-[0.82rem] font-bold tracking-[0.14em] text-brand-green uppercase">
             Conservas artesanales
           </p>
-          <h1 className="mb-5 font-serif text-[clamp(2.6rem,5vw,4.2rem)] leading-[1.02] font-bold">
+          <h1 className="mb-5 font-serif text-[clamp(2.6rem,5vw,4.2rem)] leading-[1.02] font-bold max-md:text-[clamp(3.35rem,11vw,4.2rem)]">
             Santiso, <span className="block text-brand-red">deliciosamente natural</span>
           </h1>
           <p className="mb-4 max-w-[34rem] text-[1.1rem] text-ink-muted">
             Mermeladas y conservas artesanales con sabor auténtico. Productos elaborados con frutas,
             verduras y especias seleccionadas, sin conservantes, colorantes ni sabores artificiales.
           </p>
-          <p className="mb-7 max-w-[34rem] text-ink-muted">
+          <p className="mb-7 max-w-[34rem] text-[1.1rem] text-ink-muted">
             En Santiso creamos sabores auténticos, frescos y naturalmente irresistibles. Cada producto
             conserva la esencia real de sus ingredientes para que disfrutes una experiencia artesanal,
             equilibrada y llena de sabor.
@@ -46,9 +46,14 @@ export function Hero() {
             ))}
           </ul>
         </div>
-        <div className="relative">
-          <div className="overflow-hidden rounded-[28px] border-6 border-white shadow-card-lg">
-            <img src={images.hero} alt="Mermeladas artesanales Santiso" loading="eager" />
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="aspect-[3/4] max-h-[min(85vh,680px)] overflow-hidden rounded-[28px] border-6 border-white shadow-card-lg lg:aspect-[4/5]">
+            <img
+              src={images.hero}
+              alt="Pasta con salsa de tomate artesanal Santiso"
+              loading="eager"
+              className="h-full w-full object-cover object-center"
+            />
           </div>
           <div className="absolute -left-4 bottom-6 flex flex-col gap-0.5 rounded-card-sm bg-brand-red p-4 px-5 text-white shadow-card max-lg:left-4">
             <span className="font-serif text-[1.35rem] leading-none font-bold">+ Más Fruta</span>

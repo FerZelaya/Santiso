@@ -1,15 +1,15 @@
-import { categories } from '../data/content'
-import { Button } from './Button'
-import { Container } from './layout/Container'
-import { Section } from './layout/Section'
-import { SectionHeader } from './SectionHeader'
+import { categories } from "../data/content";
+import { Button } from "./Button";
+import { Container } from "./layout/Container";
+import { Section } from "./layout/Section";
+import { SectionHeader } from "./SectionHeader";
 
 export function ProductCategories() {
   return (
     <Section id="productos" variant="cream">
       <Container>
         <SectionHeader
-          eyebrow="Catálogo"
+          eyebrow=""
           title="Nuestros productos"
           description="Conservas artesanales creadas para disfrutar sabores frescos, auténticos y naturalmente irresistibles."
         />
@@ -28,7 +28,9 @@ export function ProductCategories() {
                 />
               </div>
               <div className="flex flex-1 flex-col gap-3 p-5">
-                <h3 className="font-serif text-[1.35rem] leading-[1.15]">{category.title}</h3>
+                <h3 className="font-serif text-[1.35rem] leading-[1.15]">
+                  {category.title}
+                </h3>
                 <p className="flex-1 text-ink-muted">{category.description}</p>
                 <Button href={category.href} variant="secondary" size="md">
                   Ver sabores
@@ -39,5 +41,5 @@ export function ProductCategories() {
         </div>
       </Container>
     </Section>
-  )
+  );
 }
