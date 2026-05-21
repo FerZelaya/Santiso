@@ -142,7 +142,7 @@ export const mermeladaPresentations = [
   {
     group: "Fresa-Arándanos",
     note: "Sabor premium con frutos rojos seleccionados",
-    sizes: ["Tarro de 9 oz", "Tarro de 5 oz", "Tarro de 3 oz"],
+    sizes: ["Tarro de 9 oz", "Tarro de 5 oz", "Tarro de 2 oz"],
   },
 ] as const;
 
@@ -163,7 +163,7 @@ export const pricingNote =
 
 export const tomateProducts = [
   {
-    name: "Salsa para Pastas",
+    name: "Salsa de tomate artesanal",
     description: "Lista para usarse · Puro tomate",
     sizes: ["Tarro de 25 oz"],
     badge: "Lista para usarse",
@@ -176,7 +176,7 @@ export const tomateProducts = [
   {
     name: "Antipasto Tomate-Zanahoria",
     description: "Tomate y zanahoria seleccionados en preparación artesanal",
-    sizes: ["Tarro de 25 oz", "Tarro de 15 oz"],
+    sizes: ["Tarro de 15 oz", "Tarro de 5 oz"],
   },
 ] as const;
 
@@ -184,7 +184,7 @@ export const wholesaleNotes = [
   "Precios mayoristas",
   "ISV incluido",
   "Cantidad mínima: 6 unidades",
-  "No incluye gastos de envío",
+  "Envio gratis en tu primera compra",
 ] as const;
 
 export const benefits = [
