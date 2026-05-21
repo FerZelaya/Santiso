@@ -1,19 +1,21 @@
-import { useState } from 'react'
+import { useState } from "react";
 import {
   images,
   mermeladaFlavors,
   mermeladaPresentations,
   pricingNote,
   type MermeladaFlavor,
-} from '../data/content'
-import { cn } from '../lib/cn'
-import { FlavorModal } from './FlavorModal'
-import { Container } from './layout/Container'
-import { Section } from './layout/Section'
-import { SectionHeader } from './SectionHeader'
+} from "../data/content";
+import { cn } from "../lib/cn";
+import { FlavorModal } from "./FlavorModal";
+import { Container } from "./layout/Container";
+import { Section } from "./layout/Section";
+import { SectionHeader } from "./SectionHeader";
 
 export function MermeladasSection() {
-  const [selectedFlavor, setSelectedFlavor] = useState<MermeladaFlavor | null>(null)
+  const [selectedFlavor, setSelectedFlavor] = useState<MermeladaFlavor | null>(
+    null,
+  );
 
   return (
     <Section id="mermeladas">
@@ -22,20 +24,23 @@ export function MermeladasSection() {
           <SectionHeader
             align="left"
             eyebrow="Bajas en calorías"
-            title="Mermeladas y jaleas bajas en calorías"
+            title="Mermeladas y Jaleas Bajas en Calorías"
             description="Disfruta sabores frutales con una propuesta más natural, equilibrada y artesanal."
           />
-          <div className="mt-5 flex flex-wrap gap-2" aria-label="Sabores disponibles">
+          <div
+            className="mt-5 flex flex-wrap gap-2"
+            aria-label="Sabores disponibles"
+          >
             {mermeladaFlavors.map((flavor) => (
               <button
                 key={flavor.name}
                 type="button"
                 onClick={() => setSelectedFlavor(flavor)}
                 className={cn(
-                  'cursor-pointer rounded-full border border-ink/[0.08] bg-white px-3 py-1.5 text-[0.88rem] font-medium transition-colors',
-                  'hover:border-brand-green/30 hover:bg-brand-green/5',
+                  "cursor-pointer rounded-full border border-ink/[0.08] bg-white px-3 py-1.5 text-[0.88rem] font-medium transition-colors",
+                  "hover:border-brand-green/30 hover:bg-brand-green/5",
                   selectedFlavor?.name === flavor.name &&
-                    'border-brand-green bg-brand-green/10 text-brand-green',
+                    "border-brand-green bg-brand-green/10 text-brand-green",
                 )}
               >
                 {flavor.name}
@@ -60,9 +65,14 @@ export function MermeladasSection() {
             {pricingNote}
           </p>
           {mermeladaPresentations.map((group) => (
-            <article key={group.group} className="rounded-card bg-white p-5 shadow-card">
+            <article
+              key={group.group}
+              className="rounded-card bg-white p-5 shadow-card"
+            >
               <header className="mb-4">
-                <h3 className="mb-1.5 font-serif text-[1.4rem]">{group.group}</h3>
+                <h3 className="mb-1.5 font-serif text-[1.4rem]">
+                  {group.group}
+                </h3>
                 <p className="text-[0.92rem] text-ink-muted">{group.note}</p>
               </header>
               <p className="mb-2.5 text-[0.82rem] font-bold tracking-[0.08em] text-ink-muted uppercase">
@@ -83,7 +93,10 @@ export function MermeladasSection() {
         </div>
       </Container>
 
-      <FlavorModal flavor={selectedFlavor} onClose={() => setSelectedFlavor(null)} />
+      <FlavorModal
+        flavor={selectedFlavor}
+        onClose={() => setSelectedFlavor(null)}
+      />
     </Section>
-  )
+  );
 }

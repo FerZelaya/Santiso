@@ -1,7 +1,7 @@
-import { images, pricingNote, tomateProducts } from '../data/content'
-import { Container } from './layout/Container'
-import { Section } from './layout/Section'
-import { SectionHeader } from './SectionHeader'
+import { images, pricingNote, tomateProducts } from "../data/content";
+import { Container } from "./layout/Container";
+import { Section } from "./layout/Section";
+import { SectionHeader } from "./SectionHeader";
 
 export function TomateSection() {
   return (
@@ -10,7 +10,7 @@ export function TomateSection() {
         <SectionHeader
           className="mb-10"
           eyebrow="Salsas y antipastos"
-          title="Conservas de tomate"
+          title="Conservas de Tomate"
           description="Salsas y antipastos artesanales listos para acompañar tus comidas con el sabor auténtico del tomate y vegetales seleccionados."
         />
 
@@ -27,13 +27,18 @@ export function TomateSection() {
               {pricingNote}
             </p>
             {tomateProducts.map((product) => (
-              <article key={product.name} className="relative rounded-card bg-white p-6 shadow-card">
-                {'badge' in product && product.badge && (
+              <article
+                key={product.name}
+                className="relative rounded-card bg-white p-6 shadow-card"
+              >
+                {"badge" in product && product.badge && (
                   <span className="mb-3 inline-block rounded-full bg-brand-red/10 px-2.5 py-1.5 text-[0.78rem] font-bold text-brand-red uppercase">
                     {product.badge}
                   </span>
                 )}
-                <h3 className="mb-2 font-serif text-[1.4rem]">{product.name}</h3>
+                <h3 className="mb-2 font-serif text-[1.4rem]">
+                  {product.name}
+                </h3>
                 <p className="mb-4 text-ink-muted">{product.description}</p>
                 <p className="mb-2.5 text-[0.82rem] font-bold tracking-[0.08em] text-ink-muted uppercase">
                   Presentaciones disponibles
@@ -54,5 +59,5 @@ export function TomateSection() {
         </div>
       </Container>
     </Section>
-  )
+  );
 }
